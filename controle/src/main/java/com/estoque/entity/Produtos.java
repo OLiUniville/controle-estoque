@@ -1,19 +1,35 @@
-package com.identity;
+package com.estoque.entity;
 
-import java.time.LocalDateTime;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import java.util.Date;
 
 @Entity
-
+@Table(name= "produtos")
 public class Produtos {
-    
+
+@Id
+@GeneratedValue(strategy = GenerationType.AUTO)
 private Long id_produto;
 private String codigo_produto;
 private String descricao_produto;
-private LocalDateTime data_criacao_produto;
-private LocalDateTime data_atualizacao_produto;
+@Temporal(TemporalType.TIMESTAMP)
+private Date data_criacao_produto;
+@Temporal(TemporalType.TIMESTAMP)
+private Date data_atualizacao_produto;
 private double valor_custo_produto;
 private double valor_venda_produto;
+@JoinColumn(name="idMarca")
 private String marca_produto;
+
+public Produtos() {}
+
 
     public Long getIdProduto() {
         return id_produto;
@@ -39,19 +55,19 @@ private String marca_produto;
         this.descricao_produto = descricao_produto;
     }
 
-    public LocalDateTime getDataCriacaoProduto() {
+    public Date getDataCriacaoProduto() {
         return data_criacao_produto;
     }
 
-    public void setDataCriacaoProduto(LocalDateTime data_criacao_produto) {
+    public void setDataCriacaoProduto(Date data_criacao_produto) {
         this.data_criacao_produto = data_criacao_produto;
     }
 
-    public LocalDateTime getDataAtualizacaoProduto() {
+    public Date getDataAtualizacaoProduto() {
         return data_atualizacao_produto;
     }
 
-    public void setDataAtualizacaoProduto(LocalDateTime data_atualizacao_produto) {
+    public void setDataAtualizacaoProduto(Date data_atualizacao_produto) {
         this.data_atualizacao_produto = data_atualizacao_produto;
     }
 
