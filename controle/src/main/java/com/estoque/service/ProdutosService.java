@@ -15,24 +15,24 @@ public class ProdutosService {
     @Autowired
     private ProdutoRepository produtoRepository;
 
-    // Método para buscar todos os produtos
+   
     public List<Produtos> buscarTodos() {
         return produtoRepository.findAll();
     }
 
-    // Método para inserir um novo produto
+ 
     public Produtos inserir(Produtos objeto) {
-        objeto.setDataCriacaoProduto(new Date()); // Defina a data de criação
-        return produtoRepository.saveAndFlush(objeto); // Corrigido: saveAndFlush
+        objeto.setDataCriacaoProduto(new Date()); 
+        return produtoRepository.saveAndFlush(objeto); 
     }
 
-    // Método para alterar um produto
+    
     public Produtos alterar(Produtos objeto) {
-        objeto.setDataAtualizacaoProduto(new Date()); // Defina uma data de atualização
+        objeto.setDataAtualizacaoProduto(new Date());
         return produtoRepository.saveAndFlush(objeto);
     }
 
-    // Método para excluir um produto pelo ID
+   
     public void excluir(Long id) {
         Produtos objeto = produtoRepository.findById(id).orElse(null);
         if (objeto != null) {
