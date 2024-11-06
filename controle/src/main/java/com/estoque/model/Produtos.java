@@ -3,7 +3,6 @@ package com.estoque.model;
 
 import java.util.Date;
 
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,6 +19,8 @@ public class Produtos {
 @Id
 @GeneratedValue(strategy = GenerationType.AUTO)
 private Long id_produto;
+@JoinColumn(name="idMarca")
+private String marca_produto;
 private String codigo_produto;
 private String descricao_produto;
 @Temporal(TemporalType.TIMESTAMP)
@@ -28,8 +29,7 @@ private Date data_criacao_produto;
 private Date data_atualizacao_produto;
 private double valor_custo_produto;
 private double valor_venda_produto;
-@JoinColumn(name="idMarca")
-private String marca_produto;
+
 
 
 
@@ -43,6 +43,14 @@ public Produtos() {}
 
     public void setIdProduto(Long id_produto) {
         this.id_produto = id_produto;
+    }
+    
+    public String getMarcaProduto() {
+        return marca_produto;
+    }
+
+    public void setMarcaProduto(String marca_produto) {
+        this.marca_produto = marca_produto;
     }
 
     public String getCodigoProduto() {
@@ -91,14 +99,6 @@ public Produtos() {}
 
     public void setValorVendaProduto(double valor_venda_produto) {
         this.valor_venda_produto = valor_venda_produto;
-    }
-
-    public String getMarcaProduto() {
-        return marca_produto;
-    }
-
-    public void setMarcaProduto(String marca_produto) {
-        this.marca_produto = marca_produto;
     }
 
 
