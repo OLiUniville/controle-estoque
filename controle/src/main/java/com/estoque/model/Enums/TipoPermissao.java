@@ -6,19 +6,19 @@ public enum TipoPermissao {
     FUNCIONARIO,
     VENDEDOR;
 
-    public boolean podeCriar() {
+    public boolean inserir() {
         return this == ADM;
     }
 
-    public boolean podeAtualizar() {
+    public boolean alterar() {
         return this == ADM || this == FUNCIONARIO;
     }
 
-    public boolean podeVisualizar() {
+    public boolean buscarTodos() {
         return true;  
     }
 
-    public boolean podeDeletar() {
+    public boolean excluir() {
         return this == ADM;
     }
 }

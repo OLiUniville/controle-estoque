@@ -23,6 +23,7 @@ private Long id_produto;
 private String marca_produto;
 private String codigo_produto;
 private String descricao_produto;
+private Long quantidade_produto;
 @Temporal(TemporalType.TIMESTAMP)
 private Date data_criacao_produto;
 @Temporal(TemporalType.TIMESTAMP)
@@ -67,10 +68,14 @@ public Produtos() {}
 
     public void setDescricaoProduto(String descricao_produto) {
         this.descricao_produto = descricao_produto;
+    } 
+
+    public Long getQuantidade(){
+        return quantidade_produto;
     }
 
-    public Date getDataCriacaoProduto() {
-        return data_criacao_produto;
+    public void setQuantidade(Long quantidade_produto){
+        this.quantidade_produto = quantidade_produto;
     }
 
     public void setDataCriacaoProduto(Date data_criacao_produto) {
