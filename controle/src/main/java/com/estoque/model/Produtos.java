@@ -3,14 +3,7 @@ package com.estoque.model;
 
 import java.util.Date;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name= "produtos")
@@ -76,6 +69,10 @@ public Produtos() {}
 
     public void setQuantidade(Long quantidade_produto){
         this.quantidade_produto = quantidade_produto;
+    }
+
+    public Date getDataCriacaoProduto() {
+        return data_criacao_produto;
     }
 
     public void setDataCriacaoProduto(Date data_criacao_produto) {
