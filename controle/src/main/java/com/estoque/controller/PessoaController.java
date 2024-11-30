@@ -10,6 +10,8 @@ import com.estoque.model.Pessoa;
 import com.estoque.model.Enums.TipoPermissao;
 import com.estoque.service.PessoaService;
 
+/*PessoaContoller, Esta classe é responsavel por gerenciar as operações de CRUD da entidade Pesssoa*/
+
 @RestController
 @RequestMapping("/api/pessoa")
 public class PessoaController {

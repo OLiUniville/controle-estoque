@@ -10,6 +10,8 @@ import com.estoque.service.ProdutosService;
 
 import java.util.List;
 
+/*ProdutoContoller, Esta classe é responsavel por gerenciar as operações de CRUD da entidade Produtos*/
+
 @RestController
 @RequestMapping("/api/produtos")
 public class ProdutoController {

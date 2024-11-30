@@ -1,4 +1,5 @@
 package com.estoque.service;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,8 @@ import com.estoque.exception.UnauthorizedException;
 import com.estoque.model.Pessoa;
 import com.estoque.model.Enums.TipoPermissao;
 import com.estoque.repository.PessoaRepository;
+
+/*A classe PessoaService encapsula a lógica de negócios e regras de permissão para operações CRUD relacionadas à entidade Pessoa.*/
 
 @Service
 public class PessoaService {
@@ -26,6 +29,7 @@ public class PessoaService {
         if (!permissao.inserir()) {
             throw new UnauthorizedException("Permissão negada para inserir registros.");
         }
+        objeto.setDataCriacaoPessoa(new Date());
         return pessoaRepository.saveAndFlush(objeto);
     }
 

@@ -6,6 +6,7 @@ import com.estoque.model.Enums.TipoPermissao;
 
 import jakarta.persistence.*;
 
+/*Esta é uma classe responsavel pela entidade pessoa, onde contem os atributos e metodos. */
 
 @Entity
 @Table(name = "Pessoa")
@@ -16,13 +17,10 @@ public class Pessoa {
     private Long id_pessoa;
     private String nome;
     private String cpf;
-
     @Enumerated(EnumType.STRING)
     private TipoPermissao tipoPermissao;  
-
     @Temporal(TemporalType.TIMESTAMP)
     private Date data_criacao_pessoa;
-
     @Temporal(TemporalType.TIMESTAMP)
     private Date data_atualizacao_pessoa;
 

@@ -1,5 +1,7 @@
 package com.estoque.model.Enums;
 
+/*Esta entidade é responsável por configurar a lógica do enum, que, por sua vez, define um objeto com o seu valor constante.*/
+
 public enum TipoPermissao {
     
     ADM,

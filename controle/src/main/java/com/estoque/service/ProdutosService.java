@@ -13,6 +13,8 @@ import com.estoque.model.Enums.TipoPermissao;
 import com.estoque.repository.PessoaRepository;
 import com.estoque.repository.ProdutoRepository;
 
+/*A classe ProdutosService encapsula a lógica de negócios para operações relacionadas aos produtos, incluindo verificações de permissão para garantir que apenas usuários autorizados possam realizar certas operações.*/
+
 @Service
 public class ProdutosService {
 

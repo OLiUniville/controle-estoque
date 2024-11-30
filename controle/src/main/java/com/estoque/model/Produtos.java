@@ -5,30 +5,26 @@ import java.util.Date;
 
 import jakarta.persistence.*;
 
+/*Esta é uma classe responsavel pela entidade Produtos, onde contem os atributos e metodos.*/
+
 @Entity
 @Table(name= "produtos")
 public class Produtos {
 
-@Id
-@GeneratedValue(strategy = GenerationType.AUTO)
-private Long id_produto;
-@JoinColumn(name="idMarca")
-private String marca_produto;
-private String codigo_produto;
-private String descricao_produto;
-private Long quantidade_produto;
-@Temporal(TemporalType.TIMESTAMP)
-private Date data_criacao_produto;
-@Temporal(TemporalType.TIMESTAMP)
-private Date data_atualizacao_produto;
-private double valor_custo_produto;
-private double valor_venda_produto;
-
-
-
-
- 
-public Produtos() {}
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id_produto;
+    @JoinColumn(name="idMarca")
+    private String marca_produto;
+    private String codigo_produto;
+    private String descricao_produto;
+    private Long quantidade_produto;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date data_criacao_produto;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date data_atualizacao_produto;
+    private double valor_custo_produto;
+    private double valor_venda_produto;
 
 
     public Long getIdProduto() {
